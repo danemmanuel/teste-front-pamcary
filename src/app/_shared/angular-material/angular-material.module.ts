@@ -27,7 +27,6 @@ import {
   MatDividerModule,
   MatSnackBarModule
 } from '@angular/material';
-import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   imports: [
@@ -51,7 +50,6 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatBottomSheetModule,
     MatPaginatorModule,
     MatTooltipModule,
-    DragDropModule,
     MatDialogModule,
     MatProgressBarModule,
     MatExpansionModule,
@@ -80,7 +78,6 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatBottomSheetModule,
     MatPaginatorModule,
     MatTooltipModule,
-    DragDropModule,
     MatDialogModule,
     MatProgressBarModule,
     MatExpansionModule,

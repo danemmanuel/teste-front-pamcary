@@ -1,0 +1,14 @@
+<div class="top_menu">
+  <div class="container">
+    <ul class="menu_list">
+      <ng-container *ngFor="let item of menuItems">
+        <li>
+          <a [routerLink]="item.path">
+            <mat-icon>{{ item.icon }}</mat-icon>
+            {{ item.title }}</a
+          >
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</div>

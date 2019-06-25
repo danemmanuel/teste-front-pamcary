@@ -1,0 +1,24 @@
+<div class="row-flex">
+  <div class="s12 m3 l3 xl3">
+    <ng-container *ngFor="let mensagem of mensagens">
+      <mat-card matRipple (click)="selecionarMensagem(mensagem)" class="mensagem_lista">
+        <mat-card-title>
+          {{ mensagem.nome }}
+        </mat-card-title>
+
+        <mat-card-subtitle>
+          {{ mensagem.data_cadastro | date: 'dd/MM/yyyy - HH:mm:ss' }}
+        </mat-card-subtitle>
+      </mat-card>
+    </ng-container>
+  </div>
+  <div class="s12 m9 l9 xl9">
+    <div class="mensagem_conteudo">
+      <app-detalhes-mensagem
+        [mensagemSelecionada]="mensagemSelecionada"
+        (mensagemExcluida)="excluirMensagem($event)"
+      >
+      </app-detalhes-mensagem>
+    </div>
+  </div>
+</div>

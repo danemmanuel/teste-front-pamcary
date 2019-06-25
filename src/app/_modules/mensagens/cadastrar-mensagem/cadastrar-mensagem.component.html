@@ -60,8 +60,11 @@
           <mat-form-field appearance="outline">
             <mat-label>Assunto:</mat-label>
             <mat-select formControlName="assunto">
-              <mat-option *ngFor="let assunto of assuntos" [value]="assunto">
-                {{ assunto }}
+              <mat-option
+                *ngFor="let assunto of assuntos"
+                [value]="assunto.titulo"
+              >
+                {{ assunto.titulo }}
               </mat-option>
             </mat-select>
             <mat-error

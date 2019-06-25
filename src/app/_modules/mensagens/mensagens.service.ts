@@ -11,4 +11,16 @@ export class MensagensService {
   buscarMensagens() {
     return this.httpclient.get<any>(`${URL_API}/mensagem`);
   }
+
+  cadastrarMensagem(mensagem) {
+    return this.httpclient.post<any>(`${URL_API}/mensagem`, mensagem);
+  }
+
+  excluirMensagem(idMensagem) {
+    return this.httpclient.delete<any>(`${URL_API}/mensagem/${idMensagem}`);
+  }
+
+  buscarAssuntos() {
+    return this.httpclient.get<any>(`${URL_API}/assunto`);
+  }
 }

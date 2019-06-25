@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { SnackBarService } from 'src/app/_shared/snack-bar/snack-bar.service';
+import { MensagensService } from '../mensagens.service';
 
 @Component({
   selector: 'app-cadastrar-mensagem',
@@ -12,6 +13,7 @@ export class CadastrarMensagemComponent implements OnInit {
   assuntos = [];
   submitted: boolean;
   constructor(
+    private _mensagensService: MensagensService,
     private formBuilder: FormBuilder,
     private _snackService: SnackBarService
   ) {}
@@ -21,8 +23,8 @@ export class CadastrarMensagemComponent implements OnInit {
     this.montarFormulario();
   }
 
-  buscarAssuntos() {
-    this.assuntos = ['Orçamento', 'Dúvida', 'Elogio', 'Reclamação'];
+  async buscarAssuntos() {
+    this.assuntos = await this._mensagensService.buscarAssuntos().toPromise();
   }
 
   montarFormulario() {
@@ -40,10 +42,14 @@ export class CadastrarMensagemComponent implements OnInit {
     if (this.formulario.invalid) {
       return;
     }
-    this._snackService.exibirFeedBackSucesso(
-      `Mensagem Cadastrada com Sucesso!`
-    );
-    this.formulario.reset();
-    this.submitted = false;
+    this._mensagensService
+      .cadastrarMensagem(this.formulario.value)
+      .subscribe(mensagem => {
+        this._snackService.exibirFeedBackSucesso(
+          `Mensagem Cadastrada com Sucesso!`
+        );
+        this.formulario.reset();
+        this.submitted = false;
+      });
   }
 }

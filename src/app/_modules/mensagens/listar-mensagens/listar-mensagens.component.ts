@@ -30,12 +30,12 @@ export class ListarMensagensComponent implements OnInit {
   }
 
   excluirMensagem(mensagem) {
-    this.mensagens = this.mensagens.filter(msg => {
-      return msg.id !== mensagem.id;
+    this._mensagensService.excluirMensagem(mensagem._id).subscribe(() => {
+      this.mensagemSelecionada = null;
+      this._snackService.exibirFeedBackSucesso(
+        `Mensagem de '${mensagem.nome}' Excluída com Sucesso!`
+      );
+      this.buscarMensagens();
     });
-    this.mensagemSelecionada = null;
-    this._snackService.exibirFeedBackSucesso(
-      `Mensagem de '${mensagem.nome}' Excluída com Sucesso!`
-    );
   }
 }

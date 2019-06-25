@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DialogComponent } from 'src/app/_shared/dialog/dialog.component';
 import { MatDialog } from '@angular/material';
+import { Mensagem } from 'src/app/_shared/models/Mensagem';
 
 @Component({
   selector: 'app-detalhes-mensagem',
@@ -8,8 +9,8 @@ import { MatDialog } from '@angular/material';
   styleUrls: ['./detalhes-mensagem.component.scss']
 })
 export class DetalhesMensagemComponent {
-  @Input() mensagemSelecionada;
-  @Output() mensagemExcluida = new EventEmitter<any>();
+  @Input() mensagemSelecionada: Mensagem;
+  @Output() mensagemExcluida = new EventEmitter<Mensagem>();
 
   constructor(private dialog: MatDialog) {}
   excluirMensagem() {

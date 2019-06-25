@@ -1,7 +1,11 @@
 <div class="row-flex">
   <div class="s12 m3 l3 xl3">
     <ng-container *ngFor="let mensagem of mensagens">
-      <mat-card matRipple (click)="selecionarMensagem(mensagem)" class="mensagem_lista">
+      <mat-card
+        matRipple
+        (click)="selecionarMensagem(mensagem)"
+        class="mensagem_lista"
+      >
         <mat-card-title>
           {{ mensagem.nome }}
         </mat-card-title>
@@ -19,6 +23,9 @@
         (mensagemExcluida)="excluirMensagem($event)"
       >
       </app-detalhes-mensagem>
+      <mat-card *ngIf="mensagens?.length === 0">
+        <mat-error>Nenhuma mensagem cadastrada!</mat-error>
+      </mat-card>
     </div>
   </div>
 </div>

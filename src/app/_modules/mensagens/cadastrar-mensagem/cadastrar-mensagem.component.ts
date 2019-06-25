@@ -45,6 +45,5 @@ export class CadastrarMensagemComponent implements OnInit {
     );
     this.formulario.reset();
     this.submitted = false;
-    console.log(this.formulario);
   }
 }

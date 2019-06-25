@@ -17,8 +17,8 @@ export class DetalhesMensagemComponent {
       .open(DialogComponent, {
         data: {
           titulo: 'Excluir Mensagem',
-          conteudo: `Deseja realmente excluír a mensagem '${
-            this.mensagemSelecionada.titulo
+          conteudo: `Deseja realmente excluír a mensagem de'${
+            this.mensagemSelecionada.nome
           }' ?`,
           txtBtn: 'Excluir'
         }

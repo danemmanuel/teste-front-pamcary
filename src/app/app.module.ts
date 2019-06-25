@@ -13,7 +13,8 @@ import { MAT_DATE_LOCALE } from '@angular/material';
 import { SnackBarComponent } from 'src/app/_shared/snack-bar/snack-bar.component';
 import { DialogComponent } from './_shared/dialog/dialog.component';
 import { NgxMaskModule } from 'ngx-mask';
-
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 registerLocaleData(localePt);
 
 @NgModule({
@@ -29,7 +30,9 @@ registerLocaleData(localePt);
     RouterModule,
     AppRoutingModule,
     AngularMaterialModule,
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    HttpClientModule,
+    HttpModule
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },

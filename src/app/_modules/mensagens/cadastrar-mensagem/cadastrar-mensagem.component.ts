@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { SnackBarService } from 'src/app/_shared/snack-bar/snack-bar.service';
 import { MensagensService } from '../mensagens.service';
+import { Assunto } from 'src/app/_shared/models/Assunto';
 
 @Component({
   selector: 'app-cadastrar-mensagem',
@@ -10,7 +11,7 @@ import { MensagensService } from '../mensagens.service';
 })
 export class CadastrarMensagemComponent implements OnInit {
   formulario: FormGroup;
-  assuntos = [];
+  assuntos: Assunto[];
   submitted: boolean;
   constructor(
     private _mensagensService: MensagensService,

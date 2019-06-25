@@ -1,0 +1,13 @@
+.mensagem_lista {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.mensagem_conteudo {
+  margin-left: 20px;
+}
+@media screen and (max-width: 601px) {
+  .mensagem_conteudo {
+    margin-left: 0px;
+    margin-top:30px;
+  }
+}

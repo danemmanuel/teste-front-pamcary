@@ -20,11 +20,10 @@ export class ListarMensagensComponent implements OnInit {
     this.buscarMensagens();
   }
 
-  buscarMensagens() {
-    this._mensagensService.buscarMensagens().subscribe(mensagens => {
-      this.mensagens = mensagens;
-    });
+  async buscarMensagens() {
+    this.mensagens = await this._mensagensService.buscarMensagens().toPromise();
   }
+
   selecionarMensagem(mensagem) {
     this.mensagemSelecionada = mensagem;
   }

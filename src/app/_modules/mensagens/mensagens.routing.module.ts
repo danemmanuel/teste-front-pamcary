@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CadastrarMensagemComponent } from './cadastrar-mensagem/cadastrar-mensagem.component';
+import { ListarMensagensComponent } from './listar-mensagens/listar-mensagens.component';
 
 const routes: Routes = [
   {
-    path: 'cadastrar',
+    path: 'mensagens/cadastrar',
     component: CadastrarMensagemComponent
+  },
+  {
+    path: '',
+    component: ListarMensagensComponent
   }
 ];
 @NgModule({

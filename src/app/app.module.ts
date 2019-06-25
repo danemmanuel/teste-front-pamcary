@@ -12,6 +12,7 @@ import localePt from '@angular/common/locales/pt';
 import { MAT_DATE_LOCALE } from '@angular/material';
 import { SnackBarComponent } from 'src/app/_shared/snack-bar/snack-bar.component';
 import { DialogComponent } from './_shared/dialog/dialog.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 registerLocaleData(localePt);
 
@@ -27,7 +28,8 @@ registerLocaleData(localePt);
     BrowserAnimationsModule,
     RouterModule,
     AppRoutingModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },

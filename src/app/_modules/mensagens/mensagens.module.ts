@@ -6,6 +6,7 @@ import { ListarMensagensComponent } from './listar-mensagens/listar-mensagens.co
 import { AngularMaterialModule } from 'src/app/_shared/angular-material/angular-material.module';
 import { DetalhesMensagemComponent } from './listar-mensagens/detalhes-mensagem/detalhes-mensagem.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AngularMaterialModule,
     MensagensRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskModule
   ],
   declarations: [
     CadastrarMensagemComponent,

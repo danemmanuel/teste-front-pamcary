@@ -1,7 +1,7 @@
 export const ROUTES = [
   {
     path: '/',
-    title: 'Início',
+    title: 'Dashboard',
     icon: 'home'
   },
   {

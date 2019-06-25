@@ -13,8 +13,10 @@ import { MAT_DATE_LOCALE } from '@angular/material';
 import { SnackBarComponent } from 'src/app/_shared/snack-bar/snack-bar.component';
 import { DialogComponent } from './_shared/dialog/dialog.component';
 import { NgxMaskModule } from 'ngx-mask';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { LoaderInterceptorService } from './_shared/interceptors/loader/loader-interceptor.service';
+import { LoaderComponent } from './_shared/interceptors/loader/loader.component';
 registerLocaleData(localePt);
 
 @NgModule({
@@ -22,7 +24,8 @@ registerLocaleData(localePt);
     AppComponent,
     TopMenuComponent,
     SnackBarComponent,
-    DialogComponent
+    DialogComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,11 @@ registerLocaleData(localePt);
     HttpModule
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptorService,
+      multi: true
+    },
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
     { provide: LOCALE_ID, useValue: 'pt-BR' }
   ],

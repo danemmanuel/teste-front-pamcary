@@ -1,7 +1,7 @@
 <div class="row-flex">
-  <div class="m3">
+  <div class="s12 m3 l3 xl3">
     <ng-container *ngFor="let mensagem of mensagens">
-      <mat-card (click)="selecionarMensagem(mensagem)" class="mensagem_lista">
+      <mat-card matRipple (click)="selecionarMensagem(mensagem)" class="mensagem_lista">
         <mat-card-title>
           {{ mensagem.titulo }}
         </mat-card-title>
@@ -12,7 +12,7 @@
       </mat-card>
     </ng-container>
   </div>
-  <div class="m9">
+  <div class="s12 m9 l9 xl9">
     <div class="mensagem_conteudo">
       <app-detalhes-mensagem
         [mensagemSelecionada]="mensagemSelecionada"

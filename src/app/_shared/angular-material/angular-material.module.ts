@@ -26,7 +26,8 @@ import {
   MatExpansionModule,
   MatDividerModule,
   MatSnackBarModule,
-  MatCardModule
+  MatCardModule,
+  MatRippleModule
 } from '@angular/material';
 
 @NgModule({
@@ -57,7 +58,8 @@ import {
     MatDividerModule,
     MatSnackBarModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatRippleModule
   ],
   exports: [
     MatSlideToggleModule,
@@ -86,7 +88,8 @@ import {
     MatDividerModule,
     MatSnackBarModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatRippleModule
   ],
 
   declarations: []

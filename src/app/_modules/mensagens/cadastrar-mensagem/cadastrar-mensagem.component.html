@@ -14,9 +14,7 @@
               placeholder="Insira o nome"
               pattern="[a-zA-Z ]+"
             />
-            <mat-error
-              *ngIf="formulario.get('nome')['errors']?.required && submitted"
-            >
+            <mat-error *ngIf="formulario.get('nome')['errors']?.required">
               Nome Obrigatório
             </mat-error>
             <mat-error *ngIf="formulario.get('nome')['errors']?.pattern">
@@ -33,9 +31,7 @@
               formControlName="email"
               placeholder="Insira o email"
             />
-            <mat-error
-              *ngIf="formulario.get('email')['errors']?.required && submitted"
-            >
+            <mat-error *ngIf="formulario.get('email')['errors']?.required">
               Email Obrigatório
             </mat-error>
             <mat-error *ngIf="formulario.get('email')['errors']?.email">
@@ -67,9 +63,7 @@
                 {{ assunto.titulo }}
               </mat-option>
             </mat-select>
-            <mat-error
-              *ngIf="formulario.get('assunto')['errors']?.required && submitted"
-            >
+            <mat-error *ngIf="formulario.get('assunto')['errors']?.required">
               Assunto Obrigatório
             </mat-error>
           </mat-form-field>
@@ -87,11 +81,7 @@
               cdkAutosizeMaxRows="8"
               maxlength="500"
             ></textarea>
-            <mat-error
-              *ngIf="
-                formulario.get('mensagem')['errors']?.required && submitted
-              "
-            >
+            <mat-error *ngIf="formulario.get('mensagem')['errors']?.required">
               Mensagem Obrigatória
             </mat-error>
             <mat-hint align="end"

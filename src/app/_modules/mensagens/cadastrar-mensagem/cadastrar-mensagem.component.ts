@@ -12,7 +12,6 @@ import { Assunto } from 'src/app/_shared/models/Assunto';
 export class CadastrarMensagemComponent implements OnInit {
   formulario: FormGroup;
   assuntos: Assunto[];
-  submitted: boolean;
   constructor(
     private _mensagensService: MensagensService,
     private formBuilder: FormBuilder,
@@ -39,7 +38,6 @@ export class CadastrarMensagemComponent implements OnInit {
   }
 
   submitFormulario() {
-    this.submitted = true;
     if (this.formulario.invalid) {
       return;
     }
@@ -50,7 +48,6 @@ export class CadastrarMensagemComponent implements OnInit {
           `Mensagem Cadastrada com Sucesso!`
         );
         this.formulario.reset();
-        this.submitted = false;
       });
   }
 }

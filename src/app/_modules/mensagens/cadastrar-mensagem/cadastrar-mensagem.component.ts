@@ -25,7 +25,7 @@ export class CadastrarMensagemComponent implements OnInit {
     this.formulario = this.formBuilder.group({
       nome: [null, [Validators.required, Validators.pattern('^[a-zA-Z ]+')]],
       email: [null, [Validators.required, Validators.email]],
-      telefone: [null, [Validators.required]],
+      telefone: [null],
       assunto: [null, [Validators.required]],
       mensagem: [null, [Validators.required]]
     });

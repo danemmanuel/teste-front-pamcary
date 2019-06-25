@@ -3,8 +3,8 @@
 ## Observações
 
 - Criei uma pequena api rest em nodejs para as operações com as mensagens, está no meu github também (https://github.com/danemmanuel/pamcary-api);
-- Fiz o deploy do frontend e do backend no heroku, estão nestes respectivos links:
-  -- Frontend: https://teste-front-pamcary.herokuapp.com/;
+- Fiz o deploy do frontend e do backend no heroku, estão nestes respectivos links: <br>
+  -- Frontend: https://teste-front-pamcary.herokuapp.com/; <br>
   -- Backend: https://pamcary-api.herokuapp.com/;
 - Foi utilizado um framework css desenvolvido por mim para a utilização do sistema de grids, também está no meu github (https://github.com/danemmanuel/gridflexbox);
 

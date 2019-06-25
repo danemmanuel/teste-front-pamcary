@@ -1,3 +1,104 @@
-<p>
-  cadastrar-mensagem works!
-</p>
+<mat-card>
+  <form [formGroup]="formulario" (ngSubmit)="submitFormulario()">
+    <div class="row">
+      <div class="col-lg-12">
+        <mat-form-field appearance="outline">
+          <mat-label>Nome:</mat-label>
+          <input
+            matInput
+            formControlName="nome"
+            placeholder="Insira o nome"
+            pattern="[a-zA-Z ]+"
+          />
+          <mat-error
+            *ngIf="formulario.get('nome')['errors']?.required && submitted"
+          >
+            Nome Obrigatório
+          </mat-error>
+          <mat-error *ngIf="formulario.get('nome')['errors']?.pattern">
+            Insira apenas letras
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-lg-12">
+        <mat-form-field appearance="outline">
+          <mat-label>Email:</mat-label>
+          <input
+            matInput
+            formControlName="email"
+            placeholder="Insira o email"
+          />
+          <mat-error
+            *ngIf="formulario.get('email')['errors']?.required && submitted"
+          >
+            Email Obrigatório
+          </mat-error>
+          <mat-error *ngIf="formulario.get('email')['errors']?.email">
+            Insira um email válido
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-lg-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Telefone:</mat-label>
+          <input
+            matInput
+            formControlName="telefone"
+            mask="(00) 00000-0000"
+            placeholder="Insira o telefone"
+          />
+          <mat-error
+            *ngIf="formulario.get('telefone')['errors']?.required && submitted"
+          >
+            Telefone Obrigatório
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-lg-12">
+        <mat-form-field appearance="outline">
+          <mat-label>Assunto:</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let assunto of assuntos" [value]="assunto">
+              {{ assunto }}
+            </mat-option>
+          </mat-select>
+          <mat-error
+            *ngIf="formulario.get('assunto')['errors']?.required && submitted"
+          >
+            Assunto Obrigatório
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="d">
+        <mat-form-field appearance="outline">
+          <mat-label>Mensagem:</mat-label>
+          <textarea
+            matInput
+            formControlName="mensagem"
+            placeholder="Insira a Mensagem"
+            cdkTextareaAutosize
+            cdkAutosizeMinRows="5"
+            cdkAutosizeMaxRows="8"
+          ></textarea>
+          <mat-error
+            *ngIf="formulario.get('mensagem')['errors']?.required && submitted"
+          >
+            Mensagem Obrigatória
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <button mat-raised-button color="primary" type="submit">
+          Cadastrar
+        </button>
+      </div>
+    </div>
+  </form>
+</mat-card>
